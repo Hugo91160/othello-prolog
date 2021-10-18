@@ -26,8 +26,7 @@ minmax([Grid_in, FirstMinMaxCoords], MaxPlayer, MinPlayer, Depth, Result) :-
 
 % no more possibility end of tree or Depth = 0
 minmax([Grid_in, [A,I]], MaxPlayer, MinPlayer, _, [Result, [A,I]]) :-
-  % dynamic_heuristic_evaluation(Grid_in, MaxPlayer, MinPlayer, Result) /* compute the Heuristic every time */
-  get_or_compute_heuristic(Grid_in, MaxPlayer, MinPlayer, Result) /* less brute force ;) */
+  dynamic_heuristic_evaluation(Grid_in, MaxPlayer, MinPlayer, Result) /* compute the Heuristic every time */
   .
   % ,nl,afficheGrille(Grid_in), write(Result), write('  '),write(A), write(','), write(I),nl.
 

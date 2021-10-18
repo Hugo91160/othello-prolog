@@ -4,8 +4,10 @@
 :- ensure_loaded('./game/rules.pl').
 
 
+:- ensure_loaded('./ai/custom.pl').
 :- ensure_loaded('./ai/random.pl').
 :- ensure_loaded('./ai/alphabeta.pl').
+:- ensure_loaded('./ai/alphabetaMob.pl').
 :- ensure_loaded('./ai/heuristic.pl').
 :- ensure_loaded('./ai/minmax.pl').
 
@@ -19,7 +21,6 @@ play :-
   % retract(nocolor),
   option(color),
   set_cache(time,time, 0),
-  delete_cache(heuristic_stats, _, _),
   option(player, x),
   option(player, o),
   grilleDeDepart(Grid),
@@ -102,7 +103,7 @@ playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
 
 playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
   playerType(Player, alphabeta),
-  Depth = 4,
+  Depth = 3,
   afficheCellule(Player), write('- AlphaBeta.. Depth: ') ,write(Depth), nl,
   afficheGrille(Grid, Alpha_last, Index_last),
   nl, displayRunTime(' - Running since: '),
@@ -113,5 +114,20 @@ playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
       % use_module(library(statistics)).
       % profile(play).
 
+playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
+  playerType(Player, custom),
+  afficheCellule(Player), write('- Custom'),nl,
+  afficheGrille(Grid, Alpha_last, Index_last),
+  inputPickCustomCoord(Grid, Alpha, Index, Player),
+  sleep(1).
+
+playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
+  playerType(Player, alphabetaMob),
+  Depth = 3,
+  afficheCellule(Player), write('- AlphaBeta (Mob).. Depth: ') ,write(Depth), nl,
+  afficheGrille(Grid, Alpha_last, Index_last),
+  nl, displayRunTime(' - Running since: '),
+  nl, displayHeuristic(Grid, Player),
+  alphabetaMob(Grid, Player, Depth, [_Heuristic_value, [Alpha, Index]]).
 
 % vim:set et sw=2 ts=2 ft=prolog:

@@ -163,6 +163,15 @@ stabilityHeuristic_CB([_|TG], [_|TW], MaxPlayer, MinPlayer, ResMax, ResMin) :-
 
   %% Sum of all previous heuristic with their respective weights %%
 
+
+dynamic_heuristic_evaluation_mobility(Grid, MaxPlayer, MinPlayer, Res) :-
+  stabilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_stability),
+  coinParityHeuristic(Grid, MaxPlayer, MinPlayer, Res_coinParity),
+  cornersCapturedHeuristic(Grid, MaxPlayer, MinPlayer, Res_corners),
+
+  mobilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_mobility),
+  Res is 100 * Res_corners + 50 * Res_mobility + 25 * Res_coinParity + 25 * Res_stability.
+
 dynamic_heuristic_evaluation(Grid, MaxPlayer, MinPlayer, Res) :-
   stabilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_stability),
   coinParityHeuristic(Grid, MaxPlayer, MinPlayer, Res_coinParity),
@@ -179,28 +188,5 @@ dynamic_heuristic_evaluation(Grid, MaxPlayer, MinPlayer, Res) :-
       % use_module(library(statistics)).
       % grilleDeDepart([L1|Rest]), Block = ["-", "-", "-", "-", "-", o, o, x],  GrilleBlock= [L1, L1, L1, L1, L1, Block, Block, Block],
       % profile(dynamic_heuristic_evaluation(GrilleBlock, x, o, R)).
-
-% *optimisation* since the dynamic_heuristic_evaluation is run on every move
-% (even if we have already compute the SAME grid before)
-% caching the Heuristic of a specific board can improve performance
-
-% get existing key
-get_or_compute_heuristic(Grid, MaxPlayer, MinPlayer, Res) :-
-  increment_stats_heuristic(Grid),
-  build_key([Grid, MaxPlayer, MinPlayer], Key),
-  get_cache(heuristic, Key, Res),
-  !.
-
-% check if the Heuristic has not been process for the other player
-get_or_compute_heuristic(Grid, MaxPlayer, MinPlayer, Res) :-
-  build_key([Grid, MinPlayer, MaxPlayer], Key),
-  get_cache(heuristic, Key, ResTMP),
-  Res is ResTMP * -1,!. % invert the result (since the Heuristic evaluation give the opposite)
-
-% compute Heuristic and store it
-get_or_compute_heuristic(Grid, MaxPlayer, MinPlayer, Res) :-
-  build_key([Grid, MaxPlayer, MinPlayer], Key),
-  dynamic_heuristic_evaluation(Grid, MaxPlayer, MinPlayer, Res),
-  set_cache(heuristic, Key, Res).
 
 % vim:set et sw=2 ts=2 ft=prolog:
