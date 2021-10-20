@@ -164,13 +164,29 @@ stabilityHeuristic_CB([_|TG], [_|TW], MaxPlayer, MinPlayer, ResMax, ResMin) :-
   %% Sum of all previous heuristic with their respective weights %%
 
 
+getWeight(Grid, Res_corners, Res_mobility, Res_coinParity, Res_stability, Res) :- 
+  count_xo_grid(Count, Grid),
+  Count =< 20,
+  Res is 100 * Res_corners + 10 * Res_mobility + 5 * Res_coinParity + 50 * Res_stability.
+
+getWeight(Grid, Res_corners, Res_mobility, Res_coinParity, Res_stability, Res) :- 
+  count_xo_grid(Count, Grid),
+  Count > 20,
+  Count =< 50,
+  Res is 100 * Res_corners + 50 * Res_mobility + 10 * Res_coinParity + 25 * Res_stability.
+
+getWeight(Grid, Res_corners, Res_mobility, Res_coinParity, Res_stability, Res) :- 
+  count_xo_grid(Count, Grid),
+  Count > 50,
+  Res is 100 * Res_corners + 25 * Res_mobility + 50 * Res_coinParity + 10 * Res_stability.
+
 dynamic_heuristic_evaluation_1st(Grid, MaxPlayer, MinPlayer, Res) :-
   stabilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_stability),
   coinParityHeuristic(Grid, MaxPlayer, MinPlayer, Res_coinParity),
   cornersCapturedHeuristic(Grid, MaxPlayer, MinPlayer, Res_corners),
 
   mobilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_mobility),
-  Res is 100 * Res_corners + 50 * Res_mobility + 25 * Res_coinParity + 25 * Res_stability.
+  getWeight(Grid, Res_corners, Res_mobility, Res_coinParity, Res_stability, Res).
 
 dynamic_heuristic_evaluation_2nd(Grid, MaxPlayer, MinPlayer, Res) :-
   stabilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_stability),
@@ -178,8 +194,10 @@ dynamic_heuristic_evaluation_2nd(Grid, MaxPlayer, MinPlayer, Res) :-
   cornersCapturedHeuristic(Grid, MaxPlayer, MinPlayer, Res_corners),
 
   mobilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_mobility),
-  Res is 100 * Res_corners + 5 * Res_mobility + 25 * Res_coinParity + 25 * Res_stability.
+  getWeight2(Grid, Res_corners, Res_mobility, Res_coinParity, Res_stability, Res).
 
+getWeight2(_, Res_corners, Res_mobility, Res_coinParity, Res_stability, Res) :- 
+  Res is 100 * Res_corners + 5 * Res_mobility + 25 * Res_coinParity + 25 * Res_stability.
 % Res is 100 * Res_corners + 5 * Res_coinParity + 25 * Res_stability.
 
       % grilleDeDepart(Grid),

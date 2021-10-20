@@ -11,6 +11,7 @@
 :- ensure_loaded('./ai/heuristic.pl').
 :- ensure_loaded('./ai/minmax.pl').
 :- ensure_loaded('./ai/minmax2.pl').
+:- ensure_loaded('./ai/dynamic.pl').
 
 :- ensure_loaded('./utils/utils_ai.pl').
 :- ensure_loaded('./utils/cache.pl').
@@ -90,12 +91,11 @@ playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
   playerType(Player, random),
   afficheCellule(Player), write('- Random'),nl,
   afficheGrille(Grid, Alpha_last, Index_last),
-  inputPickRandomCoord(Grid, Alpha, Index, Player),
-  sleep(1).
+  inputPickRandomCoord(Grid, Alpha, Index, Player).
 
 playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
   playerType(Player, minmax),
-  Depth = 3,
+  getDepth(Grid,Depth),
   afficheCellule(Player), write('- MinMax (1st).. Depth: ') ,write(Depth), nl,
   afficheGrille(Grid, Alpha_last, Index_last),
   nl, displayRunTime(' - Running since: '),
@@ -103,7 +103,7 @@ playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
 
 playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
   playerType(Player, alphabeta),
-  Depth = 3,
+  getDepth(Grid,Depth),
   afficheCellule(Player), write('- AlphaBeta (1st).. Depth: ') ,write(Depth), nl,
   afficheGrille(Grid, Alpha_last, Index_last),
   nl, displayRunTime(' - Running since: '),
@@ -117,12 +117,11 @@ playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
   playerType(Player, custom),
   afficheCellule(Player), write('- Custom'),nl,
   afficheGrille(Grid, Alpha_last, Index_last),
-  inputPickCustomCoord(Grid, Alpha, Index, Player),
-  sleep(1).
+  inputPickCustomCoord(Grid, Alpha, Index, Player).
 
 playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
   playerType(Player, minmax2),
-  Depth = 3,
+  getDepth(Grid,Depth),
   afficheCellule(Player), write('- MinMax (2nd).. Depth: ') ,write(Depth), nl,
   afficheGrille(Grid, Alpha_last, Index_last),
   nl, displayRunTime(' - Running since: '),
@@ -130,7 +129,8 @@ playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
 
 playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
   playerType(Player, alphabeta2),
-  Depth = 3,
+  getDepth(Grid,Depth),
+  write(Alpha_last), write(' '), write(Index_last), nl,
   afficheCellule(Player), write('- AlphaBeta (2nd).. Depth: ') ,write(Depth), nl,
   afficheGrille(Grid, Alpha_last, Index_last),
   nl, displayRunTime(' - Running since: '),
