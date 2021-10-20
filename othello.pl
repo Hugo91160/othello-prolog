@@ -84,7 +84,6 @@ makeAMove(Grid, Player, Index, Alpha) :-
 % let the system make the play or the user (defined by prompt:option/2)
 playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
   playerType(Player, human),
-  displayHeuristic(Grid, Player),
   userInput(Grid, Alpha_last, Index_last, Alpha, Index, Player).
 
 playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
