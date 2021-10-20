@@ -145,13 +145,6 @@ displayRunTime(Msg) :-
   second(ExecutionTime, Seconds), minutes(ExecutionTime, Minutes),
   write(Msg), write(Minutes), write('min '), write(Seconds), write('s'), nl,!.
 
-
-displayHeuristic(Grid, Player) :-
-  opposite(Player, Player2),
-  dynamic_heuristic_evaluation(Grid, Player, Player2, Heuristic),
-  write(' - Heuristic: '), format('~2f', Heuristic),nl.
-
-
 % if end of game by no more cell Empty
 endOfGame(Grid):-
   countCell(Grid, _, _, 0),

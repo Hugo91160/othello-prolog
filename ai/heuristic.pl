@@ -164,7 +164,7 @@ stabilityHeuristic_CB([_|TG], [_|TW], MaxPlayer, MinPlayer, ResMax, ResMin) :-
   %% Sum of all previous heuristic with their respective weights %%
 
 
-dynamic_heuristic_evaluation_mobility(Grid, MaxPlayer, MinPlayer, Res) :-
+dynamic_heuristic_evaluation_1st(Grid, MaxPlayer, MinPlayer, Res) :-
   stabilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_stability),
   coinParityHeuristic(Grid, MaxPlayer, MinPlayer, Res_coinParity),
   cornersCapturedHeuristic(Grid, MaxPlayer, MinPlayer, Res_corners),
@@ -172,7 +172,7 @@ dynamic_heuristic_evaluation_mobility(Grid, MaxPlayer, MinPlayer, Res) :-
   mobilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_mobility),
   Res is 100 * Res_corners + 50 * Res_mobility + 25 * Res_coinParity + 25 * Res_stability.
 
-dynamic_heuristic_evaluation(Grid, MaxPlayer, MinPlayer, Res) :-
+dynamic_heuristic_evaluation_2nd(Grid, MaxPlayer, MinPlayer, Res) :-
   stabilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_stability),
   coinParityHeuristic(Grid, MaxPlayer, MinPlayer, Res_coinParity),
   cornersCapturedHeuristic(Grid, MaxPlayer, MinPlayer, Res_corners),
