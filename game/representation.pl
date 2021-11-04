@@ -24,7 +24,7 @@ succAlpha(e,f).
 succAlpha(f,g).
 succAlpha(g,h).
 
-%% allow a simpler recusive case (generic stop / List empty)
+%% allow a simpler recursive case (generic stop / List empty)
 succAlphaError(h,i) :-!.
 succAlphaError(A,B) :- succAlpha(A,B).
 

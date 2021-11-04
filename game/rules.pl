@@ -244,7 +244,7 @@ nextGrid(Grid, Player, [Grid_out, [Alpha, Index]]) :-
       % grilleDeDepart(Grid), nextGrid(Grid, x, [Grid_out, [A, I]]), afficheGrille(Grid_out). % test Match
 
 
-allnextGrid(Grid, Player, Grids) :-
+allnextGrid(Grid, Player, Grids) :- % Adds the pawn to the Grids
   bagof(Coords, nextGrid(Grid, Player, Coords),Grids),!. % the global case if true
 
 allnextGrid(_, _, []). % if no validMove == empty list

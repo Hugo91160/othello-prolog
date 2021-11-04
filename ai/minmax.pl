@@ -14,13 +14,15 @@ minmax(Grid, Player, Depth, Result) :-
 
 
 % main loop
+
 minmax([Grid_in, FirstMinMaxCoords], MaxPlayer, MinPlayer, Depth, Result) :-
   Depth \= 0,
-  allnextGrid_data(Grid_in, MaxPlayer, Grids_out, FirstMinMaxCoords),
+  allnextGrid_data(Grid_in, MaxPlayer, Grids_out, FirstMinMaxCoords), %get all next grids given a grid
   \+ length(Grids_out, 0),!, % there is still some tree to generate
+  % vrai si length de Grids_out != 0
 
   NextDepth is Depth - 1,
-  init_value_minOrMax(Depth, Init_minOrMax),
+  init_value_minOrMax(Depth, Init_minOrMax), %+inf ou -inf if pair ou impair
   getScoreMinMax(Grids_out, MaxPlayer, MinPlayer, NextDepth, Init_minOrMax, Result).
 
 
@@ -35,25 +37,34 @@ minmax([Grid_in, [A,I]], MaxPlayer, MinPlayer, _, [Result, [A,I]]) :-
 
 
 getScoreMinMax([First_grid]          , MaxPlayer, MinPlayer, Depth, OldRes, Result) :-
+  %Si la profondeur est impaire on veut minimiser car c'est le coup de l'adversaire
   even(Depth), !,
   minmax(First_grid, MinPlayer, MaxPlayer, Depth, Result_current),
   my_min(OldRes, Result_current, Result).
   % Result is max(OldRes, Result_current).
 
 getScoreMinMax([First_grid]          , MaxPlayer, MinPlayer, Depth, OldRes, Result) :-
+%profondeur est paire on veut donc maximiser le coup car mon coup 
   minmax(First_grid, MinPlayer, MaxPlayer, Depth, Result_current),
   % Result is min(OldRes, Result_current).
   my_max(OldRes, Result_current, Result).
 
 
 getScoreMinMax([First_grid|Rest_grid], MaxPlayer, MinPlayer, Depth, OldRes, RETURN) :-
+  %Si la profondeur est impaire on veut minimiser car coup de l'adversaire
   even(Depth),!,
-  minmax(First_grid, MinPlayer, MaxPlayer, Depth, Result_current),
+  minmax(First_grid, MinPlayer, MaxPlayer, Depth, Result_current), 
+  /*
+  Relance le minmax pour descendre dans l'arbe
+  */
   % Result_tmp is max(OldRes, Result_current),
-  my_min(OldRes, Result_current, Result_tmp),
+  my_min(OldRes, Result_current, Result_tmp), %get the actual score of the grid
   getScoreMinMax(Rest_grid, MaxPlayer, MinPlayer, Depth, Result_tmp, RETURN).
+  /* relance récursion pour calculer le score pour la profondeur pour calculer la min/max 
+      de l'étage actuel */
 
 getScoreMinMax([First_grid|Rest_grid], MaxPlayer, MinPlayer, Depth, OldRes, RETURN) :-
+%profondeur est paire on veut donc maximiser le coup car mon coup 
   minmax(First_grid, MinPlayer, MaxPlayer, Depth, Result_current),
   % Result_tmp is min(OldRes, Result_current),
   my_max(OldRes, Result_current, Result_tmp),
