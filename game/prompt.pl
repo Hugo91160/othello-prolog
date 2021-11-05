@@ -83,6 +83,9 @@ type(1, human).
 type(2, random).
 type(3, minmax).
 type(4, alphabeta).
+type(5, custom).
+type(6, minmax2).
+type(7, alphabeta2).
 
 my_retract(X) :- retract(X),!.
 my_retract(_).
@@ -99,9 +102,12 @@ option(player, Player) :-
   write('  2. Bot (random)  '),nl,
   write('  3. Bot (minmax)  '),nl,
   write('  4. Bot (alphabeta)  '),nl,
+  write('  5. Bot (custom)  '),nl,
+  write('  6. Bot (minmax2)  '),nl,
+  write('  7. Bot (alphabeta2)  '),nl,
   write('            '),nl,
   write('enter your choice:'),nl,
-  read(Choice), number(Choice), between(1,4, Choice), setPlayerType(Player, Choice).
+  read(Choice), number(Choice), between(1,7, Choice), setPlayerType(Player, Choice).
 
       % option(player, x).
 

@@ -203,8 +203,6 @@ static_heuristic_evaluation_CB([_|TG], [_|TW], MaxPlayer, MinPlayer, ResMax, Res
 
 
 
-
-%% 
 getWeight(Grid, Res_corners, Res_mobility, Res_coinParity, Res_stability, Res) :- 
   count_xo_grid(Count, Grid),
   Count =< 20,

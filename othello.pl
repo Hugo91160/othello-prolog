@@ -4,10 +4,14 @@
 :- ensure_loaded('./game/rules.pl').
 
 
+:- ensure_loaded('./ai/custom.pl').
 :- ensure_loaded('./ai/random.pl').
 :- ensure_loaded('./ai/alphabeta.pl').
+:- ensure_loaded('./ai/alphabeta2.pl').
 :- ensure_loaded('./ai/heuristic.pl').
 :- ensure_loaded('./ai/minmax.pl').
+:- ensure_loaded('./ai/minmax2.pl').
+:- ensure_loaded('./ai/dynamic.pl').
 
 :- ensure_loaded('./utils/utils_ai.pl').
 :- ensure_loaded('./utils/cache.pl').
@@ -20,7 +24,6 @@ play :-
   % retract(nocolor),
   option(color),
   set_cache(time,time, 0),
-  delete_cache(heuristic_stats, _, _),
   option(player, x),
   option(player, o),
   grilleDeDepart(Grid),
@@ -82,37 +85,55 @@ makeAMove(Grid, Player, Index, Alpha) :-
 % let the system make the play or the user (defined by prompt:option/2)
 playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
   playerType(Player, human),
-  displayHeuristic(Grid, Player),
   userInput(Grid, Alpha_last, Index_last, Alpha, Index, Player).
 
 playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
   playerType(Player, random),
   afficheCellule(Player), write('- Random'),nl,
   afficheGrille(Grid, Alpha_last, Index_last),
-  inputPickRandomCoord(Grid, Alpha, Index, Player),
-  sleep(1).
+  inputPickRandomCoord(Grid, Alpha, Index, Player).
 
 playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
   playerType(Player, minmax),
-  Depth = 3,
-  afficheCellule(Player), write('- MinMax.. Depth: ') ,write(Depth), nl,
+  getDepth(Grid,Depth),
+  afficheCellule(Player), write('- MinMax (1st).. Depth: ') ,write(Depth), nl,
   afficheGrille(Grid, Alpha_last, Index_last),
   nl, displayRunTime(' - Running since: '),
-  nl, displayHeuristic(Grid, Player),
   minmax(Grid, Player, Depth, [_Heuristic_value, [Alpha, Index]]).
 
 playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
   playerType(Player, alphabeta),
-  Depth = 4,
-  afficheCellule(Player), write('- AlphaBeta.. Depth: ') ,write(Depth), nl,
+  getDepth(Grid,Depth),
+  afficheCellule(Player), write('- AlphaBeta (1st).. Depth: ') ,write(Depth), nl,
   afficheGrille(Grid, Alpha_last, Index_last),
   nl, displayRunTime(' - Running since: '),
-  nl, displayHeuristic(Grid, Player),
   alphabeta(Grid, Player, Depth, [_Heuristic_value, [Alpha, Index]]).
 
 
       % use_module(library(statistics)).
       % profile(play).
 
+playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
+  playerType(Player, custom),
+  afficheCellule(Player), write('- Custom'),nl,
+  afficheGrille(Grid, Alpha_last, Index_last),
+  inputPickCustomCoord(Grid, Alpha, Index, Player).
+
+playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
+  playerType(Player, minmax2),
+  getDepth(Grid,Depth),
+  afficheCellule(Player), write('- MinMax (2nd).. Depth: ') ,write(Depth), nl,
+  afficheGrille(Grid, Alpha_last, Index_last),
+  nl, displayRunTime(' - Running since: '),
+  minmax2(Grid, Player, Depth, [_Heuristic_value, [Alpha, Index]]).
+
+playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
+  playerType(Player, alphabeta2),
+  getDepth(Grid,Depth),
+  write(Alpha_last), write(' '), write(Index_last), nl,
+  afficheCellule(Player), write('- AlphaBeta (2nd).. Depth: ') ,write(Depth), nl,
+  afficheGrille(Grid, Alpha_last, Index_last),
+  nl, displayRunTime(' - Running since: '),
+  alphabeta2(Grid, Player, Depth, [_Heuristic_value, [Alpha, Index]]).
 
 % vim:set et sw=2 ts=2 ft=prolog:
