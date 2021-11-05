@@ -13,6 +13,7 @@
 :- ensure_loaded('./utils/cache.pl').
 :- ensure_loaded('./utils/list.pl').
 :- ensure_loaded('./utils/stats.pl').
+:- ensure_loaded('./utils/utils_heuristic.pl').
 
 
 play :-

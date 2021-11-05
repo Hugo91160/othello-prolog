@@ -167,9 +167,9 @@ getAllCorners(Grid, [A,B,C,D]) :-
 countCell([], 0, 0, 0).
 
 countCell([Line|Tail], PlayerX, PlayerO, Empty) :-
-  nb_elem(Line, Nb_PlayerX, x),
-  nb_elem(Line, Nb_PlayerO, o),
-  nb_elem(Line, Nb_Empty, "-"),
+  nb_elements(Line, Nb_PlayerX, x),
+  nb_elements(Line, Nb_PlayerO, o),
+  nb_elements(Line, Nb_Empty, "-"),
   countCell(Tail, Nb_PlayerX_Old, Nb_PlayerO_Old, Nb_Empty_old),!,
   PlayerX is Nb_PlayerX_Old + Nb_PlayerX,
   PlayerO is Nb_PlayerO_Old + Nb_PlayerO,
