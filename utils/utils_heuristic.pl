@@ -87,20 +87,35 @@ indexLigneVersAlphaIndex(62,h,6).
 indexLigneVersAlphaIndex(63,h,7).
 indexLigneVersAlphaIndex(64,h,8).
 
-caseStable(Grille, a, X, Player) :- donneValeurDeCase(Grille, a, X, Player), succNum(X, Y), caseStable(Grille, a, Y, Player).
-caseStable(Grille, a, X, Player) :- donneValeurDeCase(Grille, a, X, Player), succNum(Y, X), caseStable(Grille, a, Y, Player).
-caseStable(Grille, h, X, Player) :- donneValeurDeCase(Grille, h, X, Player), succNum(X, Y), caseStable(Grille, h, Y, Player).
-caseStable(Grille, h, X, Player) :- donneValeurDeCase(Grille, h, X, Player), succNum(Y, X), caseStable(Grille, h, Y, Player).
+caseStable(Grille, a, 1, Player, _) :- donneValeurDeCase(Grille, a, 1, Player).
+caseStable(Grille, a, 8, Player, _) :- donneValeurDeCase(Grille, a, 8, Player).
+caseStable(Grille, h, 1, Player, _) :- donneValeurDeCase(Grille, h, 1, Player).
+caseStable(Grille, h, 8, Player, _) :- donneValeurDeCase(Grille, h, 8, Player).
+caseStable(Grille, a, X, Player, o) :- succNum(X, Y), donneValeurDeCase(Grille, a, X, Player), caseStable(Grille, a, Y, Player, s).
+caseStable(Grille, a, X, Player, o) :- succNum(Y, X), donneValeurDeCase(Grille, a, X, Player), caseStable(Grille, a, Y, Player, p).
+caseStable(Grille, a, X, Player, s) :- succNum(X, Y), donneValeurDeCase(Grille, a, X, Player), caseStable(Grille, a, Y, Player, s).
+caseStable(Grille, a, X, Player, p) :- succNum(Y, X), donneValeurDeCase(Grille, a, X, Player), caseStable(Grille, a, Y, Player, p).
 
-caseStable(Grille, X, 1, Player) :- donneValeurDeCase(Grille, X, 1, Player), succAlpha(X, Y), caseStable(Grille, Y, 1, Player).
-caseStable(Grille, X, 1, Player) :- donneValeurDeCase(Grille, X, 1, Player), succAlpha(Y, X), caseStable(Grille, Y, 1, Player).
-caseStable(Grille, X, 8, Player) :- donneValeurDeCase(Grille, X, 8, Player), succAlpha(X, Y), caseStable(Grille, Y, 8, Player).
-caseStable(Grille, X, 8, Player) :- donneValeurDeCase(Grille, X, 8, Player), succAlpha(Y, X), caseStable(Grille, Y, 8, Player).
+caseStable(Grille, X, 1, Player, o) :- succAlpha(X, Y), donneValeurDeCase(Grille, X, 1, Player), caseStable(Grille, Y, 1, Player, s).
+caseStable(Grille, X, 1, Player, o) :- succAlpha(Y, X), donneValeurDeCase(Grille, X, 1, Player), caseStable(Grille, Y, 1, Player, p).
+caseStable(Grille, X, 1, Player, s) :- succAlpha(X, Y), donneValeurDeCase(Grille, X, 1, Player), caseStable(Grille, Y, 1, Player, s).
+caseStable(Grille, X, 1, Player, p) :- succAlpha(Y, X), donneValeurDeCase(Grille, X, 1, Player), caseStable(Grille, Y, 1, Player, p).
+
+caseStable(Grille, X, 8, Player, o) :- succAlpha(Y, X), donneValeurDeCase(Grille, X, 8, Player), caseStable(Grille, Y, 8, Player, s).
+caseStable(Grille, X, 8, Player, o) :- succAlpha(X, Y), donneValeurDeCase(Grille, X, 8, Player), caseStable(Grille, Y, 8, Player, p).
+caseStable(Grille, X, 8, Player, s) :- succAlpha(Y, X), donneValeurDeCase(Grille, X, 8, Player), caseStable(Grille, Y, 8, Player, s).
+caseStable(Grille, X, 8, Player, p) :- succAlpha(X, Y), donneValeurDeCase(Grille, X, 8, Player), caseStable(Grille, Y, 8, Player, p).
+
+caseStable(Grille, h, X, Player, o) :- succNum(Y, X), donneValeurDeCase(Grille, h, X, Player), caseStable(Grille, h, Y, Player, s).
+caseStable(Grille, h, X, Player, o) :- succNum(X, Y), donneValeurDeCase(Grille, h, X, Player), caseStable(Grille, h, Y, Player, p).
+caseStable(Grille, h, X, Player, s) :- succNum(Y, X), donneValeurDeCase(Grille, h, X, Player), caseStable(Grille, h, Y, Player, s).
+caseStable(Grille, h, X, Player, p) :- succNum(X, Y), donneValeurDeCase(Grille, h, X, Player), caseStable(Grille, h, Y, Player, p).
 
 nbCaseInstable(_,_,0).
 
-nbCaseStable(_,_,65,X,X).
-nbCaseStable(Grille,Player,I,Acc,Res) :- indexLigneVersAlphaIndex(I,Alpha,Index), caseStable(Grille, Alpha, Index, Player), !, NextI is I+1, NvAcc is Acc+1, nbCaseStable(Grille,Player,NextI,NvAcc,Res).
-nbCaseStable(Grille,Player,I,Acc,Res) :- NextI is I+1, nbCaseStable(Grille,Player,NextI,Acc,Res).
+% nbCaseStable(_,_,65,X,X).
+% nbCaseStable(Grille,Player,I,Acc,Res) :- indexLigneVersAlphaIndex(I,Alpha,Index), caseStable(Grille, Alpha, Index, Player), !, NextI is I+1, NvAcc is Acc+1, nbCaseStable(Grille,Player,NextI,NvAcc,Res).
+% nbCaseStable(Grille,Player,I,Acc,Res) :- NextI is I+1, nbCaseStable(Grille,Player,NextI,Acc,Res).
 
-nbCaseStable(Grille,Player,Res) :- nbCaseStable(Grille,Player,1,0,Res).
+nbCaseStable(Grille,Player,Res) :- setof([Alpha,Index],caseStable(Grille, Alpha, Index, Player, o), L), !, length(L, Res).
+nbCaseStable(Grille,Player,Res) :- Res is 0.

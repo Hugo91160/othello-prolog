@@ -227,14 +227,14 @@ getWeight(Grid, Res_corners, Res_mobility, Res_coinParity, Res_stability, Res) :
 
 %% Dynamic evaluation
 dynamic_heuristic_evaluation_1st(Grid, MaxPlayer, MinPlayer, Res) :-
-  %stabilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_stability),
+  stabilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_stability),
   %coinParityHeuristic(Grid, MaxPlayer, MinPlayer, Res_coinParity),
-  cornersCapturedHeuristic(Grid, MaxPlayer, MinPlayer, Res_corners),
+  %cornersCapturedHeuristic(Grid, MaxPlayer, MinPlayer, Res_corners),
 
   %mobilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_mobility),
-  Res_stability is 0,
+  %Res_stability is 0,
   Res_coinParity is 0,
-  %Res_corners is 0,
+  Res_corners is 0,
   Res_mobility is 0,
 
   getWeight(Grid, Res_corners, Res_mobility, Res_coinParity, Res_stability, Res).
