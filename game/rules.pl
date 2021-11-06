@@ -220,7 +220,7 @@ validMove(Player, Grid, [A,I]):-
 
 %% return all the valid Moves for a player
 allValidMove(Player, Grid, Moves) :-
-  setof(D, validMove(Player,Grid, D),Moves), !. % the global case if true
+  bagof(D, validMove(Player,Grid, D),Moves), !. % the global case if true
 
 allValidMove(_, _, []). % if no validMove == empty list
 

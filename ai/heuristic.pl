@@ -89,8 +89,8 @@ else
   Corner Heuristic Value = 0 
 */
   getAllCorners(Grid, AsLine),
-  nb_elements(AsLine, Nb_MaxCoins, MaxPlayer),
-  nb_elements(AsLine, Nb_MinCoins, MinPlayer),
+  nb_elements(AsLine, MaxPlayer, Nb_MaxCoins),
+  nb_elements(AsLine, MinPlayer, Nb_MinCoins),
   Nb_AllCorners is Nb_MaxCoins + Nb_MinCoins,
     ( /* If */  Nb_AllCorners \= 0
       /* Then */ ->  Res is 100 * (Nb_MaxCoins - Nb_MinCoins) / (Nb_MaxCoins + Nb_MinCoins)
