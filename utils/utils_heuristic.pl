@@ -1,3 +1,7 @@
+/*
+@author : Hexanome 4144
+*/
+
 % Condition d'arrêt 
 % Condition d'arrêt 
 grilleEnLigne([], X, X).

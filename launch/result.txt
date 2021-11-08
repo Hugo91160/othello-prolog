@@ -39,33 +39,11 @@ x - Random
 6 - - - - - - - - 
 7 - - - - - - - - 
 8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
 1 - - - - - - - - 
 2 - - - - - - - - 
-3 - - - x - - - - 
-4 - - - x x - - - 
-5 - - - x o - - - 
-6 - - - - - - - - 
-7 - - - - - - - - 
-8 - - - - - - - - 
-
- - Running since: 0min 0s
-x - Random
-  a b c d e f g h 
-1 - - - - - - - - 
-2 - - - - - - - - 
-3 - - o x - - - - 
-4 - - - o x - - - 
-5 - - - x o - - - 
-6 - - - - - - - - 
-7 - - - - - - - - 
-8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
-  a b c d e f g h 
-1 - - - - - - - - 
-2 - - - - - - - - 
-3 - - o x - - - - 
+3 - - - - - - - - 
 4 - - - o x - - - 
 5 - - - x x - - - 
 6 - - - - x - - - 
@@ -77,42 +55,108 @@ x - Random
   a b c d e f g h 
 1 - - - - - - - - 
 2 - - - - - - - - 
-3 - - o o o - - - 
+3 - - - - - - - - 
 4 - - - o x - - - 
-5 - - - x x - - - 
-6 - - - - x - - - 
+5 - - - x o - - - 
+6 - - - - x o - - 
 7 - - - - - - - - 
 8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
 1 - - - - - - - - 
 2 - - - - - - - - 
-3 - - o o o - - - 
+3 - - - - - - - - 
 4 - - x x x - - - 
-5 - - - x x - - - 
-6 - - - - x - - - 
+5 - - - x o - - - 
+6 - - - - x o - - 
 7 - - - - - - - - 
 8 - - - - - - - - 
 
- - Running since: 0min 1s
+ - Running since: 0min 0s
 x - Random
   a b c d e f g h 
 1 - - - - - - - - 
 2 - - - - - - - - 
-3 - - o o o - - - 
-4 - - o o x - - - 
-5 - - o x x - - - 
-6 - - - - x - - - 
+3 - - - - o - - - 
+4 - - x x o - - - 
+5 - - - x o - - - 
+6 - - - - x o - - 
 7 - - - - - - - - 
 8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
 1 - - - - - - - - 
-2 - - - - x - - - 
-3 - - o o x - - - 
-4 - - o o x - - - 
-5 - - o x x - - - 
-6 - - - - x - - - 
+2 - - - - - - - - 
+3 - - - - o - - - 
+4 - - x x o - - - 
+5 - - - x o - - - 
+6 - - - - x x x - 
+7 - - - - - - - - 
+8 - - - - - - - - 
+
+ - Running since: 0min 0s
+x - Random
+  a b c d e f g h 
+1 - - - - - - - - 
+2 - - - - - - - - 
+3 - - - - o - - - 
+4 - - x x o - - - 
+5 - - - o o - - - 
+6 - - o - x x x - 
+7 - - - - - - - - 
+8 - - - - - - - - 
+o - MinMax (1st).. Depth: 3
+  a b c d e f g h 
+1 - - - - - - - - 
+2 - - - - - - - - 
+3 - - - - o - - - 
+4 - - x x x x - - 
+5 - - - o o - - - 
+6 - - o - x x x - 
+7 - - - - - - - - 
+8 - - - - - - - - 
+
+ - Running since: 0min 0s
+x - Random
+  a b c d e f g h 
+1 - - - - - - - - 
+2 - - - - - - - - 
+3 - - o - o - - - 
+4 - - x o x x - - 
+5 - - - o o - - - 
+6 - - o - x x x - 
+7 - - - - - - - - 
+8 - - - - - - - - 
+o - MinMax (1st).. Depth: 3
+  a b c d e f g h 
+1 - - - - - - - - 
+2 - - - x - - - - 
+3 - - o - x - - - 
+4 - - x o x x - - 
+5 - - - o o - - - 
+6 - - o - x x x - 
+7 - - - - - - - - 
+8 - - - - - - - - 
+
+ - Running since: 0min 0s
+x - Random
+  a b c d e f g h 
+1 - - - - - - - - 
+2 - - - x - - - - 
+3 - - o - x o - - 
+4 - - x o o x - - 
+5 - - - o o - - - 
+6 - - o - x x x - 
+7 - - - - - - - - 
+8 - - - - - - - - 
+o - MinMax (1st).. Depth: 3
+  a b c d e f g h 
+1 - - - - - - - - 
+2 - - - x - - - - 
+3 - - x - x o - - 
+4 - x x o o x - - 
+5 - - - o o - - - 
+6 - - o - x x x - 
 7 - - - - - - - - 
 8 - - - - - - - - 
 
@@ -120,21 +164,65 @@ o - AlphaBeta (1st).. Depth: 3
 x - Random
   a b c d e f g h 
 1 - - - - - - - - 
-2 - - - - x - - - 
-3 - - o o x - - - 
-4 - - o o o - - - 
-5 - - o o o o - - 
-6 - - - - x - - - 
+2 - - - x - - - - 
+3 - - x - x o - - 
+4 o o o o o x - - 
+5 - - - o o - - - 
+6 - - o - x x x - 
 7 - - - - - - - - 
 8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
 1 - - - - - - - - 
-2 - - - - x - - - 
-3 - - o o x - - - 
-4 - - o x o - - - 
-5 - - x o o o - - 
-6 - x - - x - - - 
+2 - - - x - - - - 
+3 - - x - x o - - 
+4 o o x x o x - - 
+5 - - x o o - - - 
+6 - - o - x x x - 
+7 - - - - - - - - 
+8 - - - - - - - - 
+
+ - Running since: 0min 1s
+x - Random
+  a b c d e f g h 
+1 - - - - - - - - 
+2 - - o x - - - - 
+3 - - o - x o - - 
+4 o o o x o x - - 
+5 - - o o o - - - 
+6 - - o - x x x - 
+7 - - - - - - - - 
+8 - - - - - - - - 
+o - MinMax (1st).. Depth: 3
+  a b c d e f g h 
+1 - - - - - - - - 
+2 - - o x - - - - 
+3 - - o - x o - - 
+4 o o o x o x - - 
+5 - - x o o - - - 
+6 - x o - x x x - 
+7 - - - - - - - - 
+8 - - - - - - - - 
+
+ - Running since: 0min 1s
+x - Random
+  a b c d e f g h 
+1 - - - - - - - - 
+2 - - o x - - - - 
+3 - - o - x o - - 
+4 o o o x o x - - 
+5 - - o o o - - - 
+6 - x o o x x x - 
+7 - - - - - - - - 
+8 - - - - - - - - 
+o - MinMax (1st).. Depth: 3
+  a b c d e f g h 
+1 - - - - - - - - 
+2 - - o x - - - - 
+3 - x o - x o - - 
+4 o o x x o x - - 
+5 - - o x o - - - 
+6 - x o o x x x - 
 7 - - - - - - - - 
 8 - - - - - - - - 
 
@@ -142,21 +230,21 @@ o - AlphaBeta (1st).. Depth: 3
 x - Random
   a b c d e f g h 
 1 - - - - - - - - 
-2 - - - - x - - - 
-3 - - o o o o - - 
-4 - - o x o - - - 
-5 - - x o o o - - 
-6 - x - - x - - - 
+2 - - o x - - - - 
+3 - x o o o o - - 
+4 o o x o o x - - 
+5 - - o o o - - - 
+6 - x o o x x x - 
 7 - - - - - - - - 
 8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
 1 - - - - - - - - 
-2 - - - - x - - - 
-3 - - o o o o - - 
-4 - - o x o - - - 
-5 - - x o x o - - 
-6 - x - - x x - - 
+2 - - o x x - - - 
+3 - x o x x o - - 
+4 o o x o x x - - 
+5 - - o o x - - - 
+6 - x o o x x x - 
 7 - - - - - - - - 
 8 - - - - - - - - 
 
@@ -164,545 +252,457 @@ o - AlphaBeta (1st).. Depth: 3
 x - Random
   a b c d e f g h 
 1 - - - - - - - - 
-2 - - - - x - - - 
-3 - - o o o o - - 
-4 - - o o o - - - 
-5 - - x o o o - - 
-6 - x - - x o - - 
-7 - - - - - - o - 
+2 - - o x x - - - 
+3 - x o x x o - - 
+4 o o x o x x - - 
+5 - - o o x - - - 
+6 - x o o o o o o 
+7 - - - - - - - - 
 8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
 1 - - - - - - - - 
-2 - - - - x - - - 
-3 - - o o o x - - 
-4 - - o o o - x - 
-5 - - x o o x - - 
-6 - x - - x o - - 
-7 - - - - - - o - 
-8 - - - - - - - - 
-
- - Running since: 0min 5s +2s
-x - Random
-  a b c d e f g h 
-1 - - - - - - - - 
-2 - - - - x - - - 
-3 - - o o o x - - 
-4 - - o o o - x - 
-5 - - o o o x - - 
-6 - x o - x o - - 
-7 - - - - - - o - 
-8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
-  a b c d e f g h 
-1 - - - - - - - - 
-2 - - - - x - - - 
-3 - x x x x x - - 
-4 - - x o o - x - 
-5 - - o x o x - - 
-6 - x o - x o - - 
-7 - - - - - - o - 
+2 - - o x x - - - 
+3 - x o x x x - - 
+4 o o x o x x x - 
+5 - - o o x - - - 
+6 - x o o o o o o 
+7 - - - - - - - - 
 8 - - - - - - - - 
 
- - Running since: 0min 7s +2s
+ - Running since: 0min 3s
 x - Random
   a b c d e f g h 
-1 - - - - - - - - 
-2 - - o - x - - - 
+1 - - - o - - - - 
+2 - - o o x - - - 
 3 - x o o x x - - 
-4 - - o o o - x - 
-5 - - o x o x - - 
-6 - x o - x o - - 
-7 - - - - - - o - 
+4 o o x o x x x - 
+5 - - o o x - - - 
+6 - x o o o o o o 
+7 - - - - - - - - 
 8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
-1 - - - - - - - - 
-2 - - o - x - - - 
+1 - x - o - - - - 
+2 - - x o x - - - 
 3 - x o x x x - - 
-4 - - x o o - x - 
-5 - x x x o x - - 
-6 - x o - x o - - 
-7 - - - - - - o - 
+4 o o x o x x x - 
+5 - - o o x - - - 
+6 - x o o o o o o 
+7 - - - - - - - - 
 8 - - - - - - - - 
 
- - Running since: 0min 9s +3s
+ - Running since: 0min 4s
 x - Random
   a b c d e f g h 
-1 - - - - - - - - 
-2 - - o - x - - - 
-3 - x o x x x - - 
-4 - - x o o - x - 
-5 - x x o o x - - 
-6 - x o o o o - - 
-7 - - - - - - o - 
+1 - x - o o - - - 
+2 - - x o o - - - 
+3 - x o x o x - - 
+4 o o x o o x x - 
+5 - - o o o - - - 
+6 - x o o o o o o 
+7 - - - - - - - - 
 8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
-1 - - x - - - - - 
-2 - - x - x - - - 
-3 - x x x x x - - 
-4 - - x o o - x - 
-5 - x x o o x - - 
-6 - x o o o o - - 
-7 - - - - - - o - 
+1 - x - o o - - - 
+2 - - x o o - - - 
+3 - x o x o x - - 
+4 o x x o o x x - 
+5 - x o o o - - - 
+6 - x o o o o o o 
+7 - - - - - - - - 
 8 - - - - - - - - 
 
- - Running since: 0min 14s +5s
+ - Running since: 0min 5s
 x - Random
   a b c d e f g h 
-1 - - x - - - - - 
-2 - - x - x - - - 
-3 - x x x x x - - 
-4 - - x o o - x - 
-5 o o o o o x - - 
-6 - x o o o o - - 
-7 - - - - - - o - 
+1 - x - o o - - - 
+2 - - x o o - - - 
+3 - x o x o x - - 
+4 o x x o o o o o 
+5 - x o o o - - - 
+6 - x o o o o o o 
+7 - - - - - - - - 
 8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
-1 - - x - - - - - 
-2 - - x - x - - - 
-3 - x x x x x - - 
-4 - - x o o - x - 
-5 o x o o o x - - 
-6 x x o o o o - - 
-7 - - - - - - o - 
+1 - x - o o - - - 
+2 - - x o o - - - 
+3 - x o x o x - - 
+4 o x x o o o o o 
+5 - x x o o - - - 
+6 - x o x o o o o 
+7 - - - - x - - - 
 8 - - - - - - - - 
 
- - Running since: 0min 18s +4s
+ - Running since: 0min 5s
 x - Random
   a b c d e f g h 
-1 - - x - o - - - 
-2 - - x - o - - - 
-3 - x x x o x - - 
-4 - - x o o - x - 
-5 o x o o o x - - 
-6 x x o o o o - - 
-7 - - - - - - o - 
+1 - x - o o - - - 
+2 - - x o o - - - 
+3 - x o x o x - - 
+4 o o x o o o o o 
+5 o o o o o - - - 
+6 - x o x o o o o 
+7 - - - - x - - - 
 8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
-1 - - x - o - - - 
-2 - - x - o - - - 
-3 - x x x o x - - 
-4 - - x x o - x - 
-5 o x o x o x - - 
-6 x x x x x o - - 
-7 - - - x - - o - 
+1 - x - o o - - - 
+2 - - x o o - - - 
+3 - x o x o x x - 
+4 o o x o o x o o 
+5 o o o o x - - - 
+6 - x o x o o o o 
+7 - - - - x - - - 
 8 - - - - - - - - 
 
- - Running since: 0min 23s +5s
+ - Running since: 0min 6s
 x - Random
   a b c d e f g h 
-1 - - x - o - - - 
-2 - - x - o - - - 
-3 o o o o o x - - 
-4 - - x x o - x - 
-5 o x o x o x - - 
-6 x x x x x o - - 
-7 - - - x - - o - 
+1 - x - o o - - - 
+2 - - x o o - - - 
+3 - x o x o x x - 
+4 o o x o o x o o 
+5 o o o o o o - - 
+6 - x o x o o o o 
+7 - - - - x - - - 
 8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
-1 - - x - o x - - 
-2 - - x - x - - - 
-3 o o o x o x - - 
-4 - - x x o - x - 
-5 o x o x o x - - 
-6 x x x x x o - - 
-7 - - - x - - o - 
+1 - x - o o x - - 
+2 - - x o x - - - 
+3 - x o x o x x - 
+4 o o x o o x o o 
+5 o o o o o o - - 
+6 - x o x o o o o 
+7 - - - - x - - - 
 8 - - - - - - - - 
 
- - Running since: 0min 27s +4s
+ - Running since: 0min 7s
 x - Random
   a b c d e f g h 
-1 - - x - o o o - 
-2 - - x - x - - - 
-3 o o o x o x - - 
-4 - - x x o - x - 
-5 o x o x o x - - 
-6 x x x x x o - - 
-7 - - - x - - o - 
+1 - x - o o o o - 
+2 - - x o x - - - 
+3 - x o x o x x - 
+4 o o x o o x o o 
+5 o o o o o o - - 
+6 - x o x o o o o 
+7 - - - - x - - - 
 8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
-1 - - x - o o o - 
-2 - - x - x - - - 
-3 o o o x o x - - 
-4 - - x x o - x - 
-5 o x o x o x - - 
-6 x x x x x x x - 
-7 - - - x - - o - 
+1 - x - o o o o - 
+2 - - x o x - - - 
+3 - x o x o x x - 
+4 o o x o o x o o 
+5 o o o x o x - - 
+6 - x o x x x o o 
+7 - - - - x x - - 
 8 - - - - - - - - 
 
- - Running since: 0min 34s +7s
+ - Running since: 0min 8s
 x - Random
   a b c d e f g h 
-1 - - x - o o o - 
-2 - - x - x - - - 
-3 o o o x o x - - 
-4 - o o o o - x - 
-5 o x o x o x - - 
-6 x x x x x x x - 
-7 - - - x - - o - 
+1 - x - o o o o - 
+2 - - x o x - - - 
+3 - x o x o o o o 
+4 o o x o o x o o 
+5 o o o x o x - - 
+6 - x o x x x o o 
+7 - - - - x x - - 
 8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
-1 - - x - o o o - 
-2 x - x - x - - - 
-3 o x o x o x - - 
-4 - o x o o - x - 
-5 o x o x o x - - 
-6 x x x x x x x - 
-7 - - - x - - o - 
+1 - x - o o o o - 
+2 - - x o x - - - 
+3 - x o x o x o o 
+4 o o x o o x x o 
+5 o o o x o x - x 
+6 - x o x x x x o 
+7 - - - - x x - - 
 8 - - - - - - - - 
 
- - Running since: 0min 40s +6s
+ - Running since: 0min 9s
 x - Random
   a b c d e f g h 
-1 - - x - o o o - 
-2 x - x - x - - - 
-3 o x o x o x - - 
-4 - o x o o - x - 
-5 o x o x o x - - 
-6 o o x x x x x - 
-7 o - - x - - o - 
-8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
+1 - x - o o o o - 
+2 - - x o x - - - 
+3 - x o x o x o o 
+4 o o x o o x x o 
+5 o o o x o x - x 
+6 - x o x o x x o 
+7 - - - - o x - - 
+8 - - - - o - - - 
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
-1 - - x - o o o - 
-2 x - x - x - - - 
-3 x x o x o x - - 
-4 x x x o o - x - 
-5 o x o x o x - - 
-6 o o x x x x x - 
-7 o - - x - - o - 
-8 - - - - - - - - 
+1 - x - o o o o - 
+2 - - x o x - - - 
+3 - x o x o x o o 
+4 o o x o o x x o 
+5 o o o x o x - x 
+6 - x o x x x x o 
+7 - - - x x x - - 
+8 - - - - o - - - 
 
- - Running since: 0min 43s +3s
+ - Running since: 0min 10s
 x - Random
   a b c d e f g h 
-1 o - x - o o o - 
-2 o - x - x - - - 
-3 o x o x o x - - 
-4 o x x o o - x - 
-5 o x o x o x - - 
-6 o o x x x x x - 
-7 o - - x - - o - 
-8 - - - - - - - - 
-o - AlphaBeta (1st).. Depth: 3
+1 - x - o o o o - 
+2 - - x o x - - - 
+3 - x o x o x o o 
+4 o o x o o x x o 
+5 o o o o o x - x 
+6 - x o o x x x o 
+7 - - - o x x - - 
+8 - - - o o - - - 
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
-1 o - x - o o o - 
-2 o - x - x - - - 
-3 o x o x o x - - 
-4 o x x o o - x - 
-5 o x o x o x - - 
-6 o o x x x x x - 
-7 o - - x - - x - 
-8 - - - - - - x - 
+1 - x - o o o o - 
+2 - - x o x - - - 
+3 - x o x o x o o 
+4 o o x o o x x o 
+5 o o o o o x - x 
+6 - x o o x x x o 
+7 - - - x x x - - 
+8 - - x o o - - - 
 
- - Running since: 0min 48s +5s
+ - Running since: 0min 11s
 x - Random
   a b c d e f g h 
-1 o - x - o o o - 
-2 o - x - x - - - 
-3 o x o x o x - - 
-4 o x x o o - x - 
-5 o x o x o x - - 
+1 - x - o o o o - 
+2 - - x o x - - - 
+3 - x o x o x o o 
+4 o o x o o x x o 
+5 o o o o o x - x 
+6 - x o o x x x o 
+7 - - - x x x - - 
+8 - o o o o - - - 
+o - MinMax (1st).. Depth: 3
+  a b c d e f g h 
+1 - x - o o o o - 
+2 - - x o x - - - 
+3 - x o x o x o o 
+4 o o x o o x x o 
+5 o o x o x x - x 
+6 - x x x x x x o 
+7 - - x x x x - - 
+8 - o o o o - - - 
+
+ - Running since: 0min 12s
+x - Random
+  a b c d e f g h 
+1 - x - o o o o - 
+2 - - x o x - - - 
+3 - x o x o x o o 
+4 o o x o o x x o 
+5 o o x o x x - x 
 6 o o o o o o o o 
-7 o - - x - - x - 
-8 - - - - - - x - 
-o - AlphaBeta (1st).. Depth: 3
+7 - - x x x x - - 
+8 - o o o o - - - 
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
-1 o - x - o o o - 
-2 o - x - x - - - 
-3 o x o x x x - - 
-4 o x x o x - x - 
-5 o x x x x x - - 
-6 o o o x x o o o 
-7 o - - x x - x - 
-8 - - - - - - x - 
+1 - x - o o o o - 
+2 - x x o x - - - 
+3 - x x x o x o o 
+4 o o x x o x x o 
+5 o o x o x x - x 
+6 o o o o o o o o 
+7 - - x x x x - - 
+8 - o o o o - - - 
 
- - Running since: 0min 57s +9s
+ - Running since: 0min 13s
 x - Random
   a b c d e f g h 
-1 o - x - o o o - 
-2 o - x - x - - - 
-3 o x o x x x - - 
-4 o x x o o o x - 
-5 o x x x x o - - 
-6 o o o x x o o o 
-7 o - - x x - x - 
-8 - - - - - - x - 
-o - AlphaBeta (1st).. Depth: 3
+1 - x - o o o o - 
+2 - x x o x - - - 
+3 o o o o o x o o 
+4 o o x x o x x o 
+5 o o x o x x - x 
+6 o o o o o o o o 
+7 - - x x x x - - 
+8 - o o o o - - - 
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
-1 o - x - o o o - 
-2 o - x - x - - - 
-3 o x o x x x - - 
-4 o x x o o o x - 
-5 o x x x x o - - 
-6 o x x x x o o o 
-7 o x - x x - x - 
-8 - - - - - - x - 
+1 - x - o o o o - 
+2 - x x o x - - - 
+3 o o o o o x o o 
+4 o o x x o x x o 
+5 o o x o x x - x 
+6 o o o o o x o o 
+7 - - x x x x x - 
+8 - o o o o - - - 
 
- - Running since: 1min 4s +7s
+ - Running since: 0min 13s
 x - Random
   a b c d e f g h 
-1 o - x - o o o - 
-2 o - x - x - - - 
-3 o x o x x x - - 
-4 o x x o o o x - 
-5 o x x o x o - - 
-6 o x x o x o o o 
-7 o x - o o - x - 
-8 - - - o - - x - 
-o - AlphaBeta (1st).. Depth: 3
+1 - x - o o o o - 
+2 - x x o o o - - 
+3 o o o o o x o o 
+4 o o x x o x x o 
+5 o o x o x x - x 
+6 o o o o o x o o 
+7 - - x x x x x - 
+8 - o o o o - - - 
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
-1 o - x - o o o - 
-2 o - x - x - - - 
-3 o x o x x x - - 
-4 o x x o o x x - 
-5 o x x o x x x - 
-6 o x x o x o x o 
-7 o x - o o - x - 
-8 - - - o - - x - 
+1 - x - o o o o - 
+2 - x x o o o - - 
+3 o x o o o x o o 
+4 o x x x x x x o 
+5 o x x x x x - x 
+6 o x x o o x o o 
+7 - x x x x x x - 
+8 - o o o o - - - 
 
- - Running since: 1min 11s +6s
+ - Running since: 0min 13s
 x - Random
   a b c d e f g h 
-1 o - x - o o o - 
-2 o - x - x - - - 
-3 o x o x x x - - 
-4 o x x o o x x - 
-5 o x x o x x x - 
-6 o x x o o o x o 
-7 o x - o o o x - 
-8 - - - o - - x - 
-o - AlphaBeta (1st).. Depth: 3
+1 - x - o o o o - 
+2 - x x o o o - - 
+3 o x o o o x o o 
+4 o x x o x x x o 
+5 o x x x o x - x 
+6 o x x o o o o o 
+7 - x x x x x o - 
+8 - o o o o - - o 
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
-1 o - x - o o o - 
-2 o - x - x - - - 
-3 o x o x x x - - 
-4 o x x o o x x - 
-5 o x x o x x x - 
-6 o x x o x o x o 
-7 o x - x x x x - 
-8 - - - o x - x - 
+1 - x x o o o o - 
+2 - x x x o o - - 
+3 o x o o x x o o 
+4 o x x o x x x o 
+5 o x x x o x - x 
+6 o x x o o o o o 
+7 - x x x x x o - 
+8 - o o o o - - o 
 
- - Running since: 1min 18s +7s
+ - Running since: 0min 14s
 x - Random
   a b c d e f g h 
-1 o - x - o o o - 
-2 o - x - x - - - 
-3 o x o x x x - - 
-4 o x x o o x x - 
-5 o x x o o o o o 
-6 o x x o x o x o 
-7 o x - x x x x - 
-8 - - - o x - x - 
-o - AlphaBeta (1st).. Depth: 3
+1 o o o o o o o - 
+2 - o x x o o - - 
+3 o x o o x x o o 
+4 o x x o x x x o 
+5 o x x x o x - x 
+6 o x x o o o o o 
+7 - x x x x x o - 
+8 - o o o o - - o 
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
-1 o - x - o o o - 
-2 o - x x x - - - 
-3 o x x x x x - - 
-4 o x x o o x x - 
-5 o x x o o o o o 
-6 o x x o x o x o 
-7 o x - x x x x - 
-8 - - - o x - x - 
+1 o o o o o o o - 
+2 - o x x o o - - 
+3 o x o o x x o o 
+4 o x x o x x x o 
+5 o x x x o x - x 
+6 o x x o o o x x 
+7 - x x x x x x x 
+8 - o o o o - - o 
 
- - Running since: 1min 28s +10s
+ - Running since: 0min 14s
 x - Random
   a b c d e f g h 
-1 o - x - o o o - 
-2 o - x x x o - - 
-3 o x x x o o - - 
-4 o x x o o o x - 
-5 o x x o o o o o 
-6 o x x o x o x o 
-7 o x - x x x x - 
-8 - - - o x - x - 
-o - AlphaBeta (1st).. Depth: 3
-  a b c d e f g h 
-1 o - x - o o o - 
-2 o - x x x o - - 
-3 o x x x o o - - 
-4 o x x o o o x x 
-5 o x x o o o x o 
-6 o x x o x x x o 
-7 o x - x x x x - 
-8 - - - o x - x - 
-
- - Running since: 1min 35s +8s
-x - Random
-  a b c d e f g h 
-1 o - x - o o o - 
-2 o - x x x o - - 
-3 o x x x o o - o 
-4 o x x o o o o o 
-5 o x x o o o x o 
-6 o x x o x x x o 
-7 o x - x x x x - 
-8 - - - o x - x - 
-o - AlphaBeta (1st).. Depth: 3
-  a b c d e f g h 
-1 o - x - o o o - 
-2 o - x x x x x - 
-3 o x x x o x - o 
+1 o o o o o o o - 
+2 - o x o o o - - 
+3 o x o o o x o o 
 4 o x x o x o o o 
-5 o x x x o o x o 
-6 o x x o x x x o 
-7 o x - x x x x - 
-8 - - - o x - x - 
-
- - Running since: 1min 39s +4s
-x - Random
+5 o x x x o o o x 
+6 o x x o o o x x 
+7 - x x x x x x x 
+8 - o o o o - - o 
+o - MinMax (1st).. Depth: 3
   a b c d e f g h 
-1 o o x - o o o - 
-2 o - o x x x x - 
-3 o x x o o x - o 
-4 o x x o o o o o 
-5 o x x x o o x o 
-6 o x x o x x x o 
-7 o x - x x x x - 
-8 - - - o x - x - 
-o - AlphaBeta (1st).. Depth: 3
-  a b c d e f g h 
-1 o o x - o o o - 
-2 o - o x x x x - 
-3 o x x o o x x o 
-4 o x x o o o x o 
-5 o x x x o o x o 
-6 o x x o x x x o 
-7 o x - x x x x - 
-8 - - - o x - x - 
+1 o o o o o o o - 
+2 - o x x x x x - 
+3 o x o o o x x o 
+4 o x x o x o x o 
+5 o x x x o o x x 
+6 o x x o o o x x 
+7 - x x x x x x x 
+8 - o o o o - - o 
 
- - Running since: 1min 45s +6s
+ - Running since: 0min 14s
 x - Random
   a b c d e f g h 
 1 o o o o o o o - 
-2 o - o o o x x - 
-3 o x x o o o x o 
-4 o x x o o o o o 
-5 o x x x o o x o 
-6 o x x o x x x o 
-7 o x - x x x x - 
-8 - - - o x - x - 
-o - AlphaBeta (1st).. Depth: 3
-  a b c d e f g h 
-1 o o o o o o o - 
-2 o - o o o x x - 
-3 o x x o o o x o 
-4 o x x o o x o o 
-5 o x x x x o x o 
-6 o x x x x x x o 
-7 o x x x x x x - 
-8 - - - o x - x - 
-
- - Running since: 1min 50s +5s
-x - Random
-  a b c d e f g h 
-1 o o o o o o o - 
-2 o - o o o x x - 
-3 o x o o o o x o 
-4 o x o o o x o o 
-5 o x o x x o x o 
-6 o x o x o x x o 
-7 o o o o x x x - 
-8 - - o o x - x - 
-o - AlphaBeta (1st).. Depth: 3
-  a b c d e f g h 
-1 o o o o o o o - 
-2 o x x x x x x - 
-3 o x x o o o x o 
-4 o x o x o x o o 
-5 o x o x x o x o 
-6 o x o x o x x o 
-7 o o o o x x x - 
-8 - - o o x - x - 
-
- - Running since: 1min 53s +3s
-x - Random
-  a b c d e f g h 
-1 o o o o o o o o 
-2 o x x x x x o - 
-3 o x x o o o x o 
-4 o x o x o x o o 
-5 o x o x x o x o 
-6 o x o x o x x o 
-7 o o o o x x x - 
-8 - - o o x - x - 
-o - AlphaBeta (1st).. Depth: 3
-  a b c d e f g h 
-1 o o o o o o o o 
-2 o x x x x x o - 
-3 o x x o o o x o 
-4 o x o x o x o o 
-5 o x o x x o x o 
-6 o x o x o x x o 
-7 o x x o x x x - 
-8 - x x x x - x - 
-
- - Running since: 1min 54s
-x - Random
-  a b c d e f g h 
-1 o o o o o o o o 
-2 o x x x x x o - 
-3 o x x o o o x o 
-4 o x o x o x o o 
-5 o x o x x o x o 
-6 o x o x o x x o 
-7 o o x o x x x - 
-8 o x x x x - x - 
-o - AlphaBeta (1st).. Depth: 3
-  a b c d e f g h 
-1 o o o o o o o o 
-2 o x x x x x x x 
-3 o x x o o o x o 
-4 o x o x o x o o 
-5 o x o x x o x o 
-6 o x o x o x x o 
-7 o o x o x x x - 
-8 o x x x x - x - 
-
- - Running since: 1min 55s
-x - Random
-  a b c d e f g h 
-1 o o o o o o o o 
-2 o o x x x x x x 
-3 o x o o o o x o 
-4 o x o o o x o o 
-5 o x o x o o x o 
-6 o x o x o o x o 
-7 o o x o x x o - 
-8 o x x x x - x o 
-o - AlphaBeta (1st).. Depth: 3
-  a b c d e f g h 
-1 o o o o o o o o 
-2 o o x x x x x x 
-3 o x o o o o x x 
-4 o x o o o x o x 
+2 - o x x x x x - 
+3 o x o o o x x o 
+4 o x x o x o x o 
 5 o x o x o o x x 
-6 o x o x o o x x 
-7 o o x o x x x x 
-8 o x x x x - x o 
+6 o o x o o o x x 
+7 o x x x x x x x 
+8 - o o o o - - o 
+o - MinMax (1st).. Depth: 3
+  a b c d e f g h 
+1 o o o o o o o - 
+2 x x x x x x x - 
+3 o x o o o x x o 
+4 o x x o x o x o 
+5 o x o x o o x x 
+6 o o x o o o x x 
+7 o x x x x x x x 
+8 - o o o o - - o 
 
- - Running since: 1min 55s
+ - Running since: 0min 14s
+x - Random
+  a b c d e f g h 
+1 o o o o o o o - 
+2 x x x x x x x - 
+3 o x o o o x x o 
+4 o x x o x o x o 
+5 o x o x o o x x 
+6 o o x o o o x x 
+7 o x x x o o x x 
+8 - o o o o o - o 
+o - MinMax (1st).. Depth: 3
+  a b c d e f g h 
+1 o o o o o o o - 
+2 x x x x x x x - 
+3 x x o o o x x o 
+4 x x x o x o x o 
+5 x x o x o o x x 
+6 x o x o o o x x 
+7 x x x x o o x x 
+8 x o o o o o - o 
+
+ - Running since: 0min 14s
+x - Random
+  a b c d e f g h 
+1 o o o o o o o - 
+2 x x x x x x o - 
+3 x x o o o x o o 
+4 x x x o x o o o 
+5 x x o x o o o x 
+6 x o x o o o o x 
+7 x x x x o o o x 
+8 x o o o o o o o 
+o - MinMax (1st).. Depth: 3
+  a b c d e f g h 
+1 o o o o o o o - 
+2 x x x x x x x x 
+3 x x o o o x x x 
+4 x x x o x x o x 
+5 x x o x x o o x 
+6 x o x x o o o x 
+7 x x x x o o o x 
+8 x o o o o o o o 
+
+ - Running since: 0min 14s
 
   a b c d e f g h 
 1 o o o o o o o o 
-2 o o x x x x x x 
-3 o x o o o o x x 
-4 o x o o o x o x 
-5 o x o x o o x x 
-6 o x o o o o x x 
-7 o o x o o o x x 
-8 o o o o o o o o 
+2 x x x x x x x o 
+3 x x o o o x x o 
+4 x x x o x x o o 
+5 x x o x x o o o 
+6 x o x x o o o o 
+7 x x x x o o o o 
+8 x o o o o o o o 
 
-  Player x -- Score:22
-  Player o -- Score:42
+  Player x -- Score:28
+  Player o -- Score:36
 
-Execution took: 1min 55s
+Execution took: 0min 14s
    -- Player o WON --
 

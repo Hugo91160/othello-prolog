@@ -34,8 +34,6 @@ minmax([Grid_in, [A,I]], MaxPlayer, MinPlayer, _, [Result, [A,I]]) :-
 
 
 
-
-
 getScoreMinMax([First_grid]          , MaxPlayer, MinPlayer, Depth, OldRes, Result) :-
   %Si la profondeur est impaire on veut minimiser car c'est le coup de l'adversaire
   even(Depth), !,

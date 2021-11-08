@@ -95,7 +95,7 @@ playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
 
 playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
   playerType(Player, minmax),
-  getDepth(Grid,Depth),
+  getDepth2(Grid,Depth),
   afficheCellule(Player), write('- MinMax (1st).. Depth: ') ,write(Depth), nl,
   afficheGrille(Grid, Alpha_last, Index_last),
   nl, displayRunTime(' - Running since: '),
@@ -121,7 +121,7 @@ playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
 
 playerInput(Grid, Alpha_last, Index_last, Alpha, Index, Player) :-
   playerType(Player, minmax2),
-  getDepth(Grid,Depth),
+  getDepth2(Grid,Depth),
   afficheCellule(Player), write('- MinMax (2nd).. Depth: ') ,write(Depth), nl,
   afficheGrille(Grid, Alpha_last, Index_last),
   nl, displayRunTime(' - Running since: '),

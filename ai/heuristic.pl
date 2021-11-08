@@ -1,22 +1,10 @@
-% FROM :
+/*
+@author : Hexanome 4144
+*/
+
+% Heuristics havve been described in this paper  :
 % https://courses.cs.washington.edu/courses/cse573/04au/Project/mini1/RUSSIA/Final_Paper.pdf
 
-
-% This heuristic function is actually a collection of several heuristics
-% and calculates the utility value of a board position by assigning
-% different weights to those heuristics. These heuristics take into account:
-    % - the mobility,
-    % - coin parity,
-    % - stability,
-    % - corners-captured,
-% aspects of a board configuration.
-
-% Each heuristic scales its return value from -100 to 100.
-% These values are weighed appropriately to play an optimal game.
-
-% The various heuristics include:
-
-  % !! use of if else to reduce processing (and it's more readable)
 
 
   %% 1. Coin Parity %%
@@ -228,15 +216,9 @@ getWeight(Grid, Res_corners, Res_mobility, Res_coinParity, Res_stability, Res) :
 %% Dynamic evaluation
 dynamic_heuristic_evaluation_1st(Grid, MaxPlayer, MinPlayer, Res) :-
   stabilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_stability),
-  %coinParityHeuristic(Grid, MaxPlayer, MinPlayer, Res_coinParity),
-  %cornersCapturedHeuristic(Grid, MaxPlayer, MinPlayer, Res_corners),
-
-  %mobilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_mobility),
-  %Res_stability is 0,
-  Res_coinParity is 0,
-  Res_corners is 0,
-  Res_mobility is 0,
-
+  coinParityHeuristic(Grid, MaxPlayer, MinPlayer, Res_coinParity),
+  cornersCapturedHeuristic(Grid, MaxPlayer, MinPlayer, Res_corners),
+  mobilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_mobility),
   getWeight(Grid, Res_corners, Res_mobility, Res_coinParity, Res_stability, Res).
 
 dynamic_heuristic_evaluation_2nd(Grid, MaxPlayer, MinPlayer, Res) :-
@@ -247,8 +229,11 @@ dynamic_heuristic_evaluation_2nd(Grid, MaxPlayer, MinPlayer, Res) :-
   mobilityHeuristic(Grid, MaxPlayer, MinPlayer, Res_mobility),
   getWeight2(Grid, Res_corners, Res_mobility, Res_coinParity, Res_stability, Res).
 
+dynamic_heuristic_evaluation_3rd(Grid, MaxPlayer, MinPlayer, Res) :-
+  static_heuristic_evaluation(Grid, MaxPlayer, MinPlayer, Res).
+
 getWeight2(_, Res_corners, Res_mobility, Res_coinParity, Res_stability, Res) :- 
-  Res is 100 * Res_corners + 5 * Res_mobility + 25 * Res_coinParity + 25 * Res_stability.
+  Res is 100 * Res_corners + 25 * Res_mobility + 25 * Res_coinParity + 25 * Res_stability.
 % Res is 100 * Res_corners + 5 * Res_coinParity + 25 * Res_stability.
 
       % grilleDeDepart(Grid),
